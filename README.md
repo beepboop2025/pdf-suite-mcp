@@ -1,3 +1,8 @@
+<!-- textura-banner -->
+<div align="center">
+  <a href="https://github.com/beepboop2025/pdf-toolkit-mcp"><img src="./banner.svg" width="100%" alt="pdf-toolkit-mcp" /></a>
+</div>
+
 # pdf-toolkit-mcp
 
 A comprehensive MCP (Model Context Protocol) server for PDF operations. **37 tools** for reading, searching, creating, merging, splitting, watermarking, stamping, form filling, redacting, annotating, comparing, optimizing, and more.
