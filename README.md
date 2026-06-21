@@ -1,3 +1,6 @@
+![tests](https://github.com/beepboop2025/pdf-toolkit-mcp/actions/workflows/tests.yml/badge.svg)
+![coverage](https://img.shields.io/badge/coverage-65%25-green)
+
 <!-- textura-banner -->
 <div align="center">
   <a href="https://github.com/beepboop2025/pdf-toolkit-mcp"><img src="./banner.svg" width="100%" alt="pdf-toolkit-mcp" /></a>
