@@ -1,5 +1,5 @@
 {
-  "name": "@beepboop2025/pdf-toolkit-mcp",
+  "name": "pdftoolkit-mcp",
   "version": "2.1.0",
   "description": "Comprehensive MCP server for PDF operations — 37 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, searching, comparing, and more. Built on pdf-lib and unpdf. No cloud, no API key.",
   "type": "module",
@@ -51,9 +51,6 @@
     "redact",
     "watermark"
   ],
-  "publishConfig": {
-    "access": "public"
-  },
   "files": [
     "dist",
     "README.md",

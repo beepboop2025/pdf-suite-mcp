@@ -11,7 +11,7 @@
     {
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
-      "identifier": "@beepboop2025/pdf-toolkit-mcp",
+      "identifier": "pdftoolkit-mcp",
       "version": "2.1.0",
       "transport": {
         "type": "stdio"
