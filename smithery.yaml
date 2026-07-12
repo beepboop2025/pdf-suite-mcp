@@ -1,0 +1,12 @@
+# Smithery deployment config — pdf-suite-mcp is a LOCAL stdio server.
+# It operates on files on the user's own machine, so it runs locally (via npx),
+# not on Smithery's remote gateway. This tells Smithery how to launch it for
+# tool scanning and how clients should run it.
+startCommand:
+  type: stdio
+  configSchema:
+    type: object
+    properties: {}
+    required: []
+  commandFunction: |-
+    (config) => ({ command: "npx", args: ["-y", "pdf-suite-mcp"] })
