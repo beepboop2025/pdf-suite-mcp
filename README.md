@@ -28,7 +28,7 @@ npm run build
 ### Claude Code (one line, no clone)
 
 ```sh
-claude mcp add pdf-toolkit -- npx -y pdftoolkit-mcp
+claude mcp add pdf-toolkit -- npx -y pdf-suite-mcp
 ```
 
 ### Any MCP client
@@ -40,7 +40,7 @@ Add to your client's MCP config:
   "mcpServers": {
     "pdf-toolkit": {
       "command": "npx",
-      "args": ["-y", "pdftoolkit-mcp"]
+      "args": ["-y", "pdf-suite-mcp"]
     }
   }
 }

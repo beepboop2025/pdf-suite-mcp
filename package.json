@@ -1,5 +1,5 @@
 {
-  "name": "pdftoolkit-mcp",
+  "name": "pdf-suite-mcp",
   "version": "2.1.0",
   "description": "Comprehensive MCP server for PDF operations — 37 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, searching, comparing, and more. Built on pdf-lib and unpdf. No cloud, no API key.",
   "type": "module",
