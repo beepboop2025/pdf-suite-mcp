@@ -1,0 +1,7 @@
+.git
+test
+src
+node_modules/.cache
+*.map
+.github
+dist-bundle

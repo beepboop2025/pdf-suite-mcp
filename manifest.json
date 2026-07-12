@@ -1,0 +1,197 @@
+{
+  "manifest_version": "0.2",
+  "name": "pdf-suite-mcp",
+  "display_name": "PDF Suite",
+  "version": "2.1.2",
+  "description": "Comprehensive MCP server for PDF operations — 37 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, searching, comparing, and more. Built on pdf-lib and unpdf. No cloud, no API key.",
+  "long_description": "A comprehensive, fully local MCP server for PDF operations. 37 tools covering reading and searching text, creating from text or images, page manipulation (merge, split, rotate, reorder, crop, N-up), overlays (watermark, stamp, page numbers, headers/footers), forms (read and fill), annotation and redaction, metadata, optimization (compress, flatten, validate, repair), comparing two PDFs, and embedding attachments. Built on pdf-lib and unpdf. No cloud, no API key.",
+  "author": {
+    "name": "beepboop2025",
+    "url": "https://github.com/beepboop2025"
+  },
+  "homepage": "https://github.com/beepboop2025/pdf-suite-mcp#readme",
+  "documentation": "https://github.com/beepboop2025/pdf-suite-mcp#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beepboop2025/pdf-suite-mcp.git"
+  },
+  "license": "MIT",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pdf",
+    "pdf-lib",
+    "unpdf",
+    "pdf-tools",
+    "merge-pdf",
+    "split-pdf",
+    "pdf-forms",
+    "redact",
+    "watermark"
+  ],
+  "server": {
+    "type": "node",
+    "entry_point": "dist/index.js",
+    "mcp_config": {
+      "command": "node",
+      "args": [
+        "${__dirname}/dist/index.js"
+      ]
+    }
+  },
+  "tools": [
+    {
+      "name": "pdf_read_text",
+      "description": "Extract text content from a PDF file. Can extract from all pages or specific pages. Works with text-based PDFs (not scan"
+    },
+    {
+      "name": "pdf_info",
+      "description": "Get detailed information about a PDF: page count, file size, metadata (title, author, dates), form field count, and page"
+    },
+    {
+      "name": "pdf_create",
+      "description": "Create a new PDF from text. Supports auto word-wrapping, pagination, bold/italic, configurable fonts, margins, page size"
+    },
+    {
+      "name": "pdf_images_to_pdf",
+      "description": "Convert one or more images (PNG/JPG) into a PDF. Each image becomes a page, scaled to fit while maintaining aspect ratio"
+    },
+    {
+      "name": "pdf_merge",
+      "description": "Merge multiple PDF files into a single PDF. Pages are combined in the order listed."
+    },
+    {
+      "name": "pdf_split",
+      "description": "Split a PDF into multiple files — either individual pages or custom page ranges."
+    },
+    {
+      "name": "pdf_rotate",
+      "description": "Rotate pages by 90, 180, or 270 degrees clockwise."
+    },
+    {
+      "name": "pdf_delete_pages",
+      "description": "Remove specific pages from a PDF."
+    },
+    {
+      "name": "pdf_extract_pages",
+      "description": "Extract specific pages into a new PDF."
+    },
+    {
+      "name": "pdf_reorder",
+      "description": "Reorder pages. Can also duplicate pages by repeating numbers in the order array."
+    },
+    {
+      "name": "pdf_insert_pages",
+      "description": "Insert pages from one PDF into another at a specific position. Useful for adding cover pages, appendices, or inserting c"
+    },
+    {
+      "name": "pdf_reverse",
+      "description": "Reverse the page order of a PDF. Useful for fixing scan order or printing back-to-front."
+    },
+    {
+      "name": "pdf_blank_pages",
+      "description": "Insert blank pages into a PDF at specified positions. Useful for adding separator pages or ensuring chapters start on od"
+    },
+    {
+      "name": "pdf_crop",
+      "description": "Crop pages by setting the visible area (crop box). Trims margins or isolates a region. Coordinates are in points from bo"
+    },
+    {
+      "name": "pdf_overlay_pdf",
+      "description": "Overlay one PDF on top of another. The overlay PDF is drawn on top of the base PDF pages. Perfect for adding letterheads"
+    },
+    {
+      "name": "pdf_page_layout",
+      "description": "Arrange multiple PDF pages onto single sheets in N-up layouts. Puts 2 or 4 source pages onto each output page side-by-si"
+    },
+    {
+      "name": "pdf_watermark",
+      "description": "Add a diagonal text watermark across PDF pages. The text is properly centered regardless of rotation angle."
+    },
+    {
+      "name": "pdf_page_numbers",
+      "description": "Add page numbers to every page. Supports various positions, custom prefix/suffix, and starting number."
+    },
+    {
+      "name": "pdf_add_text",
+      "description": "Add text at a specific position on a PDF page. Supports multi-line text (use \\n). Coordinates are in points from bottom-"
+    },
+    {
+      "name": "pdf_add_image",
+      "description": "Add an image (PNG/JPG) at a position on a page. Aspect ratio is preserved when only width or height is given."
+    },
+    {
+      "name": "pdf_header_footer",
+      "description": "Add headers and/or footers with dynamic placeholders: {page} for current page, {pages} for total."
+    },
+    {
+      "name": "pdf_stamp",
+      "description": "Apply a styled business stamp (like a rubber stamp) to PDF pages. Pre-configured styles for common stamps, or create cus"
+    },
+    {
+      "name": "pdf_sign",
+      "description": "Add a signature image to a PDF with smart positioning. Simplified alternative to pdf_add_image for signing documents."
+    },
+    {
+      "name": "pdf_redact",
+      "description": "VISUAL-ONLY redaction: draws opaque rectangles over regions on PDF pages. WARNING: This does NOT remove the underlying t"
+    },
+    {
+      "name": "pdf_highlight",
+      "description": "Add translucent highlight boxes over regions on PDF pages — like using a highlighter pen. Great for marking important se"
+    },
+    {
+      "name": "pdf_draw",
+      "description": "Draw shapes on PDF pages: rectangles (filled or outlined), lines, and circles/ellipses. Useful for annotations, diagrams"
+    },
+    {
+      "name": "pdf_form_read",
+      "description": "Read all form fields from a PDF. Returns each field's name, type (Text, CheckBox, Dropdown, OptionList, RadioGroup), cur"
+    },
+    {
+      "name": "pdf_form_fill",
+      "description": "Fill form fields in a PDF by name. Supports text fields, checkboxes (\"true\"/\"false\"), dropdowns, option lists, and radio"
+    },
+    {
+      "name": "pdf_set_metadata",
+      "description": "Set or update PDF document metadata fields: title, author, subject, keywords, creator, and producer. Only specified fiel"
+    },
+    {
+      "name": "pdf_decrypt",
+      "description": "Remove password protection from an encrypted PDF. Requires the correct password. Saves an unencrypted copy that can be o"
+    },
+    {
+      "name": "pdf_search",
+      "description": "Search for text in a PDF. Returns all matches with page numbers and surrounding context. Supports plain text and regex s"
+    },
+    {
+      "name": "pdf_compare",
+      "description": "Compare the text content of two PDFs page by page. Reports which pages are identical, which differ, and shows a summary "
+    },
+    {
+      "name": "pdf_flatten",
+      "description": "Flatten a PDF — converts all form fields and annotations into static page content. Fields become non-editable. Useful fo"
+    },
+    {
+      "name": "pdf_compress",
+      "description": "Attempt to reduce PDF file size by rebuilding the document structure. Copies all pages to a fresh PDF (dropping orphaned"
+    },
+    {
+      "name": "pdf_validate",
+      "description": "Validate a PDF file — checks if it can be parsed, reports page count, metadata, form fields, and any structural issues. "
+    },
+    {
+      "name": "pdf_repair",
+      "description": "Attempt to repair a damaged or malformed PDF by loading it with lenient parsing, copying all recoverable pages to a clea"
+    },
+    {
+      "name": "pdf_attach",
+      "description": "Embed one or more files as attachments inside a PDF. Attached files travel with the PDF and can be extracted by PDF read"
+    }
+  ],
+  "compatibility": {
+    "runtimes": {
+      "node": ">=18"
+    }
+  }
+}
