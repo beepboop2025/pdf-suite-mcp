@@ -1,7 +1,7 @@
 {
-  "name": "pdf-toolkit-mcp",
-  "version": "2.0.0",
-  "description": "Comprehensive MCP server for PDF operations — 29 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, and more. Built on pdf-lib and unpdf.",
+  "name": "@beepboop2025/pdf-toolkit-mcp",
+  "version": "2.1.0",
+  "description": "Comprehensive MCP server for PDF operations — 37 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, searching, comparing, and more. Built on pdf-lib and unpdf. No cloud, no API key.",
   "type": "module",
   "bin": {
     "pdf-toolkit-mcp": "./dist/index.js"
@@ -9,7 +9,10 @@
   "scripts": {
     "build": "tsc",
     "start": "node dist/index.js",
-    "dev": "tsx src/index.ts"
+    "dev": "tsx src/index.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.0",
@@ -20,10 +23,41 @@
   "devDependencies": {
     "@types/node": "^22.0.0",
     "tsx": "^4.19.0",
-    "typescript": "^5.5.0"
+    "typescript": "^5.5.0",
+    "vitest": "^2.1.0"
   },
   "engines": {
     "node": ">=18"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beepboop2025/pdf-toolkit-mcp.git"
+  },
+  "homepage": "https://github.com/beepboop2025/pdf-toolkit-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/beepboop2025/pdf-toolkit-mcp/issues"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "pdf",
+    "pdf-lib",
+    "unpdf",
+    "pdf-tools",
+    "merge-pdf",
+    "split-pdf",
+    "pdf-forms",
+    "redact",
+    "watermark"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "banner.svg"
+  ]
 }

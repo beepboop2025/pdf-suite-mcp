@@ -1,0 +1,54 @@
+name: publish
+
+# Publish to npm and the MCP registry when a GitHub release is cut (or run
+# manually). Needs one secret for npm (Settings -> Secrets -> Actions):
+#   NPM_TOKEN   an npm automation token (bypasses interactive 2FA)
+# The MCP registry step authenticates with the workflow's own OIDC token.
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  id-token: write
+
+jobs:
+  npm:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          registry-url: "https://registry.npmjs.org"
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm test
+      - name: Publish to npm
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          if [ -z "$NODE_AUTH_TOKEN" ]; then
+            echo "::notice::NPM_TOKEN not set — skipping npm publish."
+            exit 0
+          fi
+          npm publish --access public
+
+  registry:
+    needs: npm
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install mcp-publisher
+        run: |
+          curl -L "https://github.com/modelcontextprotocol/registry/releases/latest/download/mcp-publisher_$(uname -s | tr '[:upper:]' '[:lower:]')_$(uname -m | sed 's/x86_64/amd64/;s/aarch64/arm64/').tar.gz" \
+            | tar xz mcp-publisher && sudo mv mcp-publisher /usr/local/bin/
+      - name: Publish server.json
+        run: |
+          mcp-publisher login github-oidc
+          mcp-publisher publish

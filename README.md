@@ -25,9 +25,28 @@ npm run build
 
 ## Configuration
 
-### Claude Code
+### Claude Code (one line, no clone)
 
-Add to `~/.claude/settings.json`:
+```sh
+claude mcp add pdf-toolkit -- npx -y @beepboop2025/pdf-toolkit-mcp
+```
+
+### Any MCP client
+
+Add to your client's MCP config:
+
+```json
+{
+  "mcpServers": {
+    "pdf-toolkit": {
+      "command": "npx",
+      "args": ["-y", "@beepboop2025/pdf-toolkit-mcp"]
+    }
+  }
+}
+```
+
+### From a local clone
 
 ```json
 {
@@ -35,19 +54,6 @@ Add to `~/.claude/settings.json`:
     "pdf-toolkit": {
       "command": "node",
       "args": ["/path/to/pdf-toolkit-mcp/dist/index.js"]
-    }
-  }
-}
-```
-
-### Dev mode (no build step)
-
-```json
-{
-  "mcpServers": {
-    "pdf-toolkit": {
-      "command": "npx",
-      "args": ["tsx", "/path/to/pdf-toolkit-mcp/src/index.ts"]
     }
   }
 }
