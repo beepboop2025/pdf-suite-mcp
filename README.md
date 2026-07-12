@@ -1,9 +1,9 @@
 <!-- textura-banner -->
 <div align="center">
-  <a href="https://github.com/beepboop2025/pdf-toolkit-mcp"><img src="./banner.svg" width="100%" alt="pdf-toolkit-mcp" /></a>
+  <a href="https://github.com/beepboop2025/pdf-suite-mcp"><img src="./banner.svg" width="100%" alt="pdf-suite-mcp" /></a>
 </div>
 
-# pdf-toolkit-mcp
+# pdf-suite-mcp
 
 A comprehensive MCP (Model Context Protocol) server for PDF operations. **37 tools** for reading, searching, creating, merging, splitting, watermarking, stamping, form filling, redacting, annotating, comparing, optimizing, and more.
 
@@ -17,8 +17,8 @@ Built on open-source libraries — **not affiliated with Adobe**. Uses [pdf-lib]
 ## Installation
 
 ```bash
-git clone https://github.com/beepboop2025/pdf-toolkit-mcp.git
-cd pdf-toolkit-mcp
+git clone https://github.com/beepboop2025/pdf-suite-mcp.git
+cd pdf-suite-mcp
 npm install
 npm run build
 ```
@@ -53,7 +53,7 @@ Add to your client's MCP config:
   "mcpServers": {
     "pdf-toolkit": {
       "command": "node",
-      "args": ["/path/to/pdf-toolkit-mcp/dist/index.js"]
+      "args": ["/path/to/pdf-suite-mcp/dist/index.js"]
     }
   }
 }

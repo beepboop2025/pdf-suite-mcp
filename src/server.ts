@@ -13,8 +13,8 @@ import { registerAttachmentTools } from './tools/attachments.js';
 
 export function createServer(): McpServer {
   const server = new McpServer({
-    name: 'pdf-toolkit-mcp',
-    version: '2.1.1',
+    name: 'pdf-suite-mcp',
+    version: '2.1.2',
   });
 
   registerReadTools(server);

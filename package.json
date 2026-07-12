@@ -1,10 +1,10 @@
 {
   "name": "pdf-suite-mcp",
-  "version": "2.1.1",
+  "version": "2.1.2",
   "description": "Comprehensive MCP server for PDF operations — 37 tools for reading, creating, merging, splitting, watermarking, stamping, form filling, redacting, searching, comparing, and more. Built on pdf-lib and unpdf. No cloud, no API key.",
   "type": "module",
   "bin": {
-    "pdf-toolkit-mcp": "./dist/index.js"
+    "pdf-suite-mcp": "./dist/index.js"
   },
   "scripts": {
     "build": "tsc",
@@ -32,11 +32,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/beepboop2025/pdf-toolkit-mcp.git"
+    "url": "git+https://github.com/beepboop2025/pdf-suite-mcp.git"
   },
-  "homepage": "https://github.com/beepboop2025/pdf-toolkit-mcp#readme",
+  "homepage": "https://github.com/beepboop2025/pdf-suite-mcp#readme",
   "bugs": {
-    "url": "https://github.com/beepboop2025/pdf-toolkit-mcp/issues"
+    "url": "https://github.com/beepboop2025/pdf-suite-mcp/issues"
   },
   "keywords": [
     "mcp",
@@ -57,5 +57,5 @@
     "LICENSE",
     "banner.svg"
   ],
-  "mcpName": "io.github.beepboop2025/pdf-toolkit-mcp"
+  "mcpName": "io.github.beepboop2025/pdf-suite-mcp"
 }
