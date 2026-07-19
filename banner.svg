@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" font-family="Georgia, 'Times New Roman', Times, serif" role="img" aria-label="pdf-toolkit-mcp">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" font-family="Georgia, 'Times New Roman', Times, serif" role="img" aria-label="pdf-suite-mcp">
   <defs>
     <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
       <stop offset="0%" stop-color="#FFAB98"/><stop offset="55%" stop-color="#E7C7D2"/><stop offset="100%" stop-color="#A1ECFF"/>
@@ -24,7 +24,7 @@
     <rect x="74" y="96" width="56" height="56" fill="none" stroke="#FAFAFA" stroke-width="5">
       <animate attributeName="stroke-opacity" values="1;0.45;1" dur="3.6s" repeatCount="indefinite"/>
     </rect>
-    <text x="150" y="143" font-size="64" fill="#FAFAFA" letter-spacing="-1">pdf-toolkit-mcp</text>
+    <text x="150" y="143" font-size="64" fill="#FAFAFA" letter-spacing="-1">pdf-suite-mcp</text>
     <text x="74" y="214" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9a9a9a">An MCP server with 37 tools to read, build, merge, watermark, redact &amp;</text><text x="74" y="244" font-family="Helvetica, Arial, sans-serif" font-size="20" fill="#9a9a9a">fill PDFs</text>
     
   </g>
