@@ -6,7 +6,7 @@
     "url": "https://github.com/beepboop2025/pdf-suite-mcp",
     "source": "github"
   },
-  "version": "2.1.2",
+  "version": "2.1.3",
   "packages": [
     {
       "registryType": "npm",

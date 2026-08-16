@@ -2,14 +2,16 @@ import { describe, expect, it } from 'vitest';
 import fs from 'fs';
 
 describe('MCP Registry manifest', () => {
-  it('uses the current schema and matches the package release', () => {
+  it('uses the current schema and pins the published package release', () => {
     const manifest = JSON.parse(
       fs.readFileSync(new URL('../server.json', import.meta.url), 'utf8'),
     );
 
     expect(manifest.$schema).toMatch(/\/2025-12-11\/server\.schema\.json$/);
     expect(manifest.name).toBe('io.github.beepboop2025/pdf-suite-mcp');
-    expect(manifest.version).toBe('2.1.2');
+    // Registry records are immutable, so 2.1.3 is the metadata revision that
+    // migrates the card while npm 2.1.2 remains the installable implementation.
+    expect(manifest.version).toBe('2.1.3');
     expect(manifest.packages[0].version).toBe('2.1.2');
   });
 });
