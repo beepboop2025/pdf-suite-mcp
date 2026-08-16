@@ -1,7 +1,7 @@
 {
   "$schema": "https://static.modelcontextprotocol.io/schemas/2025-12-11/server.schema.json",
   "name": "io.github.beepboop2025/pdf-toolkit-mcp",
-  "description": "Legacy alias for PDF Suite MCP: 37 local tools to read, create, edit, redact, and search PDFs.",
+  "description": "Legacy PDF Toolkit identity, pinned to its 2.1.1 package; maintained successor: PDF Suite MCP.",
   "repository": {
     "url": "https://github.com/beepboop2025/pdf-suite-mcp",
     "source": "github"
@@ -12,7 +12,7 @@
       "registryType": "npm",
       "registryBaseUrl": "https://registry.npmjs.org",
       "identifier": "pdf-suite-mcp",
-      "version": "2.1.2",
+      "version": "2.1.1",
       "transport": {
         "type": "stdio"
       }

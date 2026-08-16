@@ -35,7 +35,9 @@ describe('MCP Registry manifest', () => {
     );
     expect(manifest.packages[0]).toMatchObject({
       identifier: 'pdf-suite-mcp',
-      version: '2.1.2',
+      // npm 2.1.1 is the final immutable package whose embedded mcpName owns
+      // the legacy identity; 2.1.2 correctly owns the renamed suite identity.
+      version: '2.1.1',
     });
     expect(workflow).toContain('registry/pdf-toolkit-mcp.server.json');
     expect(workflow).toContain('./mcp-publisher publish "$MCP_MANIFEST"');
