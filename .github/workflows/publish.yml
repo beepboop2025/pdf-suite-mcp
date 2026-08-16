@@ -9,6 +9,15 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+    inputs:
+      manifest:
+        description: Registry manifest to publish
+        required: true
+        default: server.json
+        type: choice
+        options:
+          - server.json
+          - registry/pdf-toolkit-mcp.server.json
 
 permissions:
   contents: read
@@ -59,7 +68,9 @@ jobs:
           echo "${MCP_PUBLISHER_SHA256}  mcp-publisher.tar.gz" | sha256sum --check --strict
           tar --extract --gzip --file mcp-publisher.tar.gz mcp-publisher
           chmod 0755 mcp-publisher
-      - name: Publish server.json
+      - name: Publish the selected registry manifest
+        env:
+          MCP_MANIFEST: ${{ inputs.manifest || 'server.json' }}
         run: |
           ./mcp-publisher login github-oidc
-          ./mcp-publisher publish
+          ./mcp-publisher publish "$MCP_MANIFEST"
