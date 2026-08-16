@@ -14,4 +14,30 @@ describe('MCP Registry manifest', () => {
     expect(manifest.version).toBe('2.1.3');
     expect(manifest.packages[0].version).toBe('2.1.2');
   });
+
+  it('keeps the renamed toolkit identity installable through the maintained package', () => {
+    const manifest = JSON.parse(
+      fs.readFileSync(
+        new URL('../registry/pdf-toolkit-mcp.server.json', import.meta.url),
+        'utf8',
+      ),
+    );
+    const workflow = fs.readFileSync(
+      new URL('../.github/workflows/publish.yml', import.meta.url),
+      'utf8',
+    );
+
+    expect(manifest.$schema).toMatch(/\/2025-12-11\/server\.schema\.json$/);
+    expect(manifest.name).toBe('io.github.beepboop2025/pdf-toolkit-mcp');
+    expect(manifest.version).toBe('2.1.2');
+    expect(manifest.repository.url).toBe(
+      'https://github.com/beepboop2025/pdf-suite-mcp',
+    );
+    expect(manifest.packages[0]).toMatchObject({
+      identifier: 'pdf-suite-mcp',
+      version: '2.1.2',
+    });
+    expect(workflow).toContain('registry/pdf-toolkit-mcp.server.json');
+    expect(workflow).toContain('./mcp-publisher publish "$MCP_MANIFEST"');
+  });
 });
